@@ -19,8 +19,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    fichaActual = fichas.shift(); // Extrae la siguiente ficha
+   // fichaActual = fichas.shift(); // Extrae la siguiente ficha
+    
+    const input = document.getElementById('inputNumeroFicha');
+    const numeroIngresado = parseInt(input.value,10);
+    fichaActual = fichas.find(f => f.id === numeroIngresado);
+    if(!fichaActual){
+      console.log(`❌ Ficha con número ${numeroIngresado} no encontrada`);
+      return;
+    }
     renderFicha(fichaActual);     // Proyección visual
-    console.log(`Ficha cantada: ${fichaActual.nombre}`);
+    console.log(`🎤 Ficha cantada: ${fichaActual.nombre}`);
   });
 });
