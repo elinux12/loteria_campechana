@@ -6,14 +6,43 @@
   <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
-  <main id="contenedorLoteria">
-    <h1>Lotería Campechana</h1>
-    <input type="numer" id="inputNumeroFicha" placeholder="Número de ficha"/>
-    <button id="btnCantarFicha">🎤 Cantar ficha</button>
-    <div id="fichaCantada" class="ficha-cantada"></div>
-  </main>
 
-  <script type="module" src="./js/main.js"></script>
+<!-- INICIO DE LA ESTRUCTURA DE LA LOTERIA -->
+
+  <div id="loteria-campechana">
+<!-- COLUMNA DE CONTROLES DE LA LOTERIA -->
+
+    <div class="columna controles">
+      <h1>Lotería Campechana</h1>
+      <input type="number" id="inputNumeroFicha" placeholder="Número de ficha"/>
+      <button id="btnCantarFicha">🎤 Cantar ficha</button>
+    </div>
+  
+<!-- COLUMNA DE RENDERIZADO DE LA LOTERIA -->
+
+    <main class="columna renderizado">
+      <div id="fichaCantada" class="ficha-proyectada"></div>
+    </main>
+    
+<!-- COLUMNA DE COLA -->
+    <div class="columna cola">
+        <div id="colaFichas"></div>
+    </div>
+    
+<!-- FIN DE LAS COLUMNAS --->
+
+  </div>
+<!-- FIN DE LA ESTRUCTURA DE LA LOTERIA-->
+<!-- INICIO DEL MODAL DE FICHAS -->
+
+<div id="modalFicha" class="modal-ficha oculto"> 
+    <div class="contenido-modal">
+      <div class="nombre-ficha-modal"></div>
+      <img class="imagen-ficha-modal" />
+    </div>
+</div>
+
+  <script type="module" src="./js/main2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>
 </body>
