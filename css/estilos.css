@@ -137,3 +137,36 @@ button {
 /* line 142, /stdin */
 .oculto {
   display: none; }
+
+/* line 146, /stdin */
+.modal-aviso {
+  background-color: blue;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  font-family: 'Campechana', sans-serif;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); }
+  /* line 158, /stdin */
+  .modal-aviso.waring {
+    border: 3px solid #f7c948; }
+    /* line 161, /stdin */
+    .modal-aviso.waring .modal-icono {
+      color: #e12d39; }
+  /* line 163, /stdin */
+  .modal-aviso.oculto {
+    display: none; }
+
+/* line 168, /stdin */
+.modal-contenido {
+  padding: 1.5rem;
+  text-align: center; }
+
+/* line 173, /stdin */
+.modal-mensaje {
+  margin: 1rem;
+  font-size: 1.1rem; }

@@ -1,5 +1,7 @@
 import { cargarFichas } from './cargarJSON.js';
 import { renderFicha } from './renderFicha.js';
+import {mostrarModalError} from './mostrarModalError.js';
+import {cerrarModal} from './mostrarModalError.js';
 
 let fichas = [];
 let fichaActual = null;
@@ -15,6 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     fichaActual = fichas.find(f => f.id === numeroIngresado);
     if (!fichaActual) {
       console.log(`❌ Ficha con número ${numeroIngresado} no encontrada`);
+      mostrarModalError("Fuera de rango", "warning"); 
+      
       return;
     }
 

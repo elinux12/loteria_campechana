@@ -142,3 +142,35 @@ button {
 .oculto {
   display: none;
 }
+
+.modal-aviso{
+  background-color: blue;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  font-family: 'Campechana', sans-serif;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  &.waring{
+    border: 3px solid #f7c948;
+    //background-color: #c5f546; no operativo
+    .modal-icono { color: #e12d39; }
+  }
+  &.oculto{
+    display: none;
+  }
+}
+
+.modal-contenido{
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.modal-mensaje{
+  margin: 1rem;
+  font-size: 1.1rem;
+}
