@@ -1,3 +1,6 @@
+$color-institucional: #e949a1;
+$color-secundario: #f7c948;
+$color-terciario: #fff;
 @keyframes entradaImperial {
   0% {
     opacity: 0;
@@ -14,6 +17,16 @@
   }
 }
 
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale (0.95);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
 
 html, body{
   margin: 0;
@@ -22,9 +35,16 @@ html, body{
   overflow: hidden; //previene scroll innecesario
   box-sizing: border-box;
 }
+
+body{
+  //background-color: #e949a1;
+  background-color: $color-terciario;
+}
 .ficha-img{
-  height:  200px;
-  width: 150px  ;
+  //height:  300px;
+  //width: 200px  ;
+  height: 50vh;
+  width: 35vw;
   max-width: 75%;
 }
 
@@ -49,23 +69,44 @@ html, body{
 }
 
 .controles {
-  background-color: #f9f9f9;
+  //background-color: #f9f9f9;
+  background-color: $color-institucional;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 1rem;
+  
 }
 
 .renderizado {
-  background-color: #fff;
+  //background-color: #fff;
+  background-color: $color-terciario;
 }
 
 .cola {
-  background-color: #f0f0f0;
+  //background-color: #f0f0f0;
+  background-color: $color-terciario;
   overflow-y: auto;
 }
 
-/* Elementos internos */
-h1 {
-  font-size: 2rem;
+.controles img{
+  width: 200px;
+  height: 125px;
+  align-self : flex-start;
   margin-bottom: 1rem;
+}
+/* Elementos internos */  
+h1 {
+  font-family: 'CInzel', serif;
+  font-size: 2rem;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 input[type="number"] {
@@ -77,10 +118,22 @@ input[type="number"] {
 }
 
 button {
+  background-color: #2b2b2b;
+  color: #fff;
+  //border: 2px solid $color-institucional;
+  border: none;
+  border-radius: 6px;
   font-size: 1.2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover{
+    //background-color: #fce4f3;
+    background-color: #444;
+  }
 }
+  
 
 .ficha-proyectada {
   font-size: 4rem;
@@ -95,15 +148,23 @@ button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #333;
+  background-color: #fddde6;
+  border: 2px solid #e949a1;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #333;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px rgba(233,73,161,0.3);
+  margin: 4px;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+  &.ficha-activa{
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(233,73,161, 0.5);
+  }
 }
 
 .modal-ficha{
@@ -135,6 +196,8 @@ button {
   max-height: 60vh;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(255,255,255,0.3);
+ 
+  
 }
 
 // Oculta el modal por defecto
@@ -143,8 +206,9 @@ button {
   display: none;
 }
 
+// Aqui inicia el modal de avisos parar wing o error
 .modal-aviso{
-  background-color: blue;
+  //background-color: blue;
   position: fixed;
   top: 20%;
   left: 50%;
@@ -155,10 +219,12 @@ button {
   border-radius: 8px;
   font-family: 'Campechana', sans-serif;
   box-shadow: 0 0 12px rgba(0,0,0,0.3);
-  &.waring{
+  animation: fadeIn 0.4s ease-out;
+  &.warning{
     border: 3px solid #f7c948;
-    //background-color: #c5f546; no operativo
-    .modal-icono { color: #e12d39; }
+    background-color: #fff3d1; //no operativo
+    color: #7c5e10;
+    .modal-icono { color: #f7c948; font-size: 2rem; }
   }
   &.oculto{
     display: none;

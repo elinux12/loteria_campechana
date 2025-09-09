@@ -11,7 +11,15 @@
   100% {
     transform: scale(1) translateY(0); } }
 
-/* line 18, /stdin */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale 0.95; }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1); } }
+
+/* line 31, /stdin */
 html, body {
   margin: 0;
   padding: 0;
@@ -19,13 +27,17 @@ html, body {
   overflow: hidden;
   box-sizing: border-box; }
 
-/* line 25, /stdin */
+/* line 39, /stdin */
+body {
+  background-color: #fff; }
+
+/* line 43, /stdin */
 .ficha-img {
-  height: 200px;
-  width: 150px;
+  height: 50vh;
+  width: 35vw;
   max-width: 75%; }
 
-/* line 31, /stdin */
+/* line 51, /stdin */
 #loteria-campechana {
   display: grid;
   grid-template-columns: 25% 50% 25%;
@@ -34,7 +46,7 @@ html, body {
   gap: 1rem;
   box-sizing: border-box; }
 
-/* line 40, /stdin */
+/* line 60, /stdin */
 .columna {
   flex: 1;
   display: flex;
@@ -46,27 +58,45 @@ html, body {
   border: 1px solid #ccc;
   /* Puedes quitarlo luego, útil para debug visual */ }
 
-/* line 51, /stdin */
+/* line 71, /stdin */
 .controles {
-  background-color: #f9f9f9; }
+  background-color: #e949a1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 1rem; }
 
-/* line 55, /stdin */
+/* line 83, /stdin */
 .renderizado {
   background-color: #fff; }
 
-/* line 59, /stdin */
+/* line 88, /stdin */
 .cola {
-  background-color: #f0f0f0;
+  background-color: #fff;
   overflow-y: auto; }
 
-/* Elementos internos */
-/* line 65, /stdin */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center; }
+/* line 94, /stdin */
+.controles img {
+  width: 200px;
+  height: 125px;
+  align-self: flex-start;
+  margin-bottom: 1rem; }
 
-/* line 71, /stdin */
+/* Elementos internos */
+/* line 101, /stdin */
+h1 {
+  font-family: 'CInzel', serif;
+  font-size: 2rem;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+
+/* line 112, /stdin */
 input[type="number"] {
   font-size: 1.2rem;
   padding: 0.5rem;
@@ -74,13 +104,22 @@ input[type="number"] {
   width: 100%;
   max-width: 200px; }
 
-/* line 79, /stdin */
+/* line 120, /stdin */
 button {
+  background-color: #2b2b2b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
   font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer; }
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease; }
+  /* line 131, /stdin */
+  button:hover {
+    background-color: #444; }
 
-/* line 85, /stdin */
+/* line 138, /stdin */
 .ficha-proyectada {
   font-size: 4rem;
   font-weight: bold;
@@ -88,22 +127,30 @@ button {
   text-align: center;
   transform-origin: center; }
 
-/* line 94, /stdin */
+/* line 147, /stdin */
 .ficha-cola {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #333;
+  background-color: #fddde6;
+  border: 2px solid #e949a1;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #333;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0 6px rgba(233, 73, 161, 0.3);
+  margin: 4px;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: transform 0.2s ease; }
+  /* line 164, /stdin */
+  .ficha-cola.ficha-activa {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(233, 73, 161, 0.5); }
 
-/* line 109, /stdin */
+/* line 170, /stdin */
 .modal-ficha {
   position: fixed;
   top: 0;
@@ -116,31 +163,30 @@ button {
   align-items: center;
   z-index: 999; }
 
-/* line 122, /stdin */
+/* line 183, /stdin */
 .contenido-modal {
   text-align: center;
   animation: entradaImperial 0.8s ease-out; }
 
-/* line 127, /stdin */
+/* line 188, /stdin */
 .nombre-ficha-modal {
   font-size: 3rem;
   color: #fff;
   margin-bottom: 1rem; }
 
-/* line 133, /stdin */
+/* line 194, /stdin */
 .imagen-ficha-modal {
   max-width: 60vw;
   max-height: 60vh;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
 
-/* line 142, /stdin */
+/* line 205, /stdin */
 .oculto {
   display: none; }
 
-/* line 146, /stdin */
+/* line 210, /stdin */
 .modal-aviso {
-  background-color: blue;
   position: fixed;
   top: 20%;
   left: 50%;
@@ -150,23 +196,27 @@ button {
   max-width: 400px;
   border-radius: 8px;
   font-family: 'Campechana', sans-serif;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); }
-  /* line 158, /stdin */
-  .modal-aviso.waring {
-    border: 3px solid #f7c948; }
-    /* line 161, /stdin */
-    .modal-aviso.waring .modal-icono {
-      color: #e12d39; }
-  /* line 163, /stdin */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease-out; }
+  /* line 223, /stdin */
+  .modal-aviso.warning {
+    border: 3px solid #f7c948;
+    background-color: #fff3d1;
+    color: #7c5e10; }
+    /* line 227, /stdin */
+    .modal-aviso.warning .modal-icono {
+      color: #f7c948;
+      font-size: 2rem; }
+  /* line 229, /stdin */
   .modal-aviso.oculto {
     display: none; }
 
-/* line 168, /stdin */
+/* line 234, /stdin */
 .modal-contenido {
   padding: 1.5rem;
   text-align: center; }
 
-/* line 173, /stdin */
+/* line 239, /stdin */
 .modal-mensaje {
   margin: 1rem;
   font-size: 1.1rem; }
