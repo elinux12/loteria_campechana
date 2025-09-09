@@ -17,6 +17,7 @@
       <h1>Lotería Campechana</h1>
       <input type="number" id="inputNumeroFicha" placeholder="Número de ficha"/>
       <button id="btnCantarFicha">🎤 Cantar ficha</button>
+      <button id="btnVerificarVictoria">Victoria</button>
     </div>
   
 <!-- COLUMNA DE RENDERIZADO DE LA LOTERIA -->
@@ -43,7 +44,7 @@
     </div>
 </div>
 
-<!-- Inidio Modal  AVISOS --->
+<!-- Inicio Modal  AVISOS --->
 <div  id="modal-aviso" class="modal-aviso oculto" >
     <div class="modal-contenido">
       <span class="modal-icono">⚠️</span>
@@ -52,7 +53,14 @@
     </div>  
 </div>
 
+<!-- INICIO DIV MODAL VICTORIA --->
+<div id="modalVictoria" class="modal-victoria oculto">
+  <div class="contenido-victoria">
+    <h1>¡LOTERÍAAA!</h1>
+  </div>
+</div>
 
+<!-- FIN DIV MODAL VICTORIA -->
 
 
   <script type="module" src="./js/main2.js"></script>

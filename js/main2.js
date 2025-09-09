@@ -43,9 +43,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Agregar ficha cantada a la cola
     
     const cola = document.getElementById('colaFichas');
+    //Verificar si la ficha ya existe en la cola
+    const yaExiste = Array.from(cola.children).some(el => el.textContent === String(fichaActual.id));
+    if(!yaExiste){
     const fichaElemento = document.createElement('div');
     fichaElemento.textContent = fichaActual.id;
     fichaElemento.classList.add('ficha-cola');
     cola.appendChild(fichaElemento);
+    } else {
+      console.log(`⚠️ Ficha ${fichaActual.id} ya está en la COLA. No se duplica.`);
+    }
+    
+    
   });
+  //FIN BLOQUE DE CODIGO DEL BOTON CANTAR LOTERIA
+  
+  //CANTAR modal-victoria
+    const btnVerificarVictoria = document.getElementById("btnVerificarVictoria");
+    console.log("cargue boton");
+    btnVerificarVictoria.addEventListener('click',()=>{
+      const modalVictoria = document.getElementById('modalVictoria');
+      console.log("cargue modal");
+      modalVictoria.classList.add('activo');
+      modalVictoria.classList.remove('oculto');
+      
+      //CIerre automatico tras 3 segundos
+      setTimeout(()=>{
+        modalVictoria.classList.add('oculto');
+      },3000);
+    });
+    
+  
 });
