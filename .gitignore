@@ -1,0 +1,6 @@
+#ignora los siguientes archivos.
+estilos.scss
+/img2/
+/js/main.js
+/json/fichas2.json
+

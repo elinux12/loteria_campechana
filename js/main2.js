@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       //CIerre automatico tras 3 segundos
       setTimeout(()=>{
         modalVictoria.classList.add('oculto');
-      },3000);
+      },4000);
     });
     
   
