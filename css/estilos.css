@@ -98,10 +98,13 @@ body {
 
 /* line 104, /stdin */
 .cola {
-  background-color: #fff;
+  background-color: #f6e7d7;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
   overflow-y: auto; }
 
-/* line 110, /stdin */
+/* line 114, /stdin */
 .controles img {
   width: 200px;
   height: 125px;
@@ -109,7 +112,7 @@ body {
   margin-bottom: 1rem; }
 
 /* Elementos internos */
-/* line 117, /stdin */
+/* line 121, /stdin */
 h1 {
   font-family: 'CInzel', serif;
   font-size: 2rem;
@@ -120,7 +123,7 @@ h1 {
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
 
-/* line 128, /stdin */
+/* line 132, /stdin */
 input[type="number"] {
   font-size: 1.2rem;
   padding: 0.5rem;
@@ -128,7 +131,7 @@ input[type="number"] {
   width: 100%;
   max-width: 200px; }
 
-/* line 136, /stdin */
+/* line 140, /stdin */
 button {
   background-color: #2b2b2b;
   color: #fff;
@@ -139,15 +142,15 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease; }
-  /* line 147, /stdin */
+  /* line 151, /stdin */
   button:hover {
     background-color: #444; }
 
-/* line 153, /stdin */
+/* line 157, /stdin */
 #btnVerificarVictoria {
   margin-top: 10px; }
 
-/* line 157, /stdin */
+/* line 161, /stdin */
 .ficha-proyectada {
   font-size: 4rem;
   font-weight: bold;
@@ -155,30 +158,30 @@ button {
   text-align: center;
   transform-origin: center; }
 
-/* line 166, /stdin */
+/* line 170, /stdin */
 .ficha-cola {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #fddde6;
+  background-color: #fcb3cd;
   border: 2px solid #e949a1;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
   font-weight: bold;
-  color: #333;
-  box-shadow: 0 0 6px rgba(233, 73, 161, 0.3);
+  color: #4a4a4a;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
   margin: 4px;
   opacity: 0.9;
   pointer-events: none;
   transition: transform 0.2s ease; }
-  /* line 183, /stdin */
+  /* line 187, /stdin */
   .ficha-cola.ficha-activa {
     transform: scale(1.1);
     box-shadow: 0 0 12px rgba(233, 73, 161, 0.5); }
 
-/* line 189, /stdin */
+/* line 193, /stdin */
 .modal-ficha {
   position: fixed;
   top: 0;
@@ -191,29 +194,29 @@ button {
   align-items: center;
   z-index: 999; }
 
-/* line 202, /stdin */
+/* line 206, /stdin */
 .contenido-modal {
   text-align: center;
   animation: entradaImperial 0.8s ease-out; }
 
-/* line 207, /stdin */
+/* line 211, /stdin */
 .nombre-ficha-modal {
   font-size: 3rem;
   color: #fff;
   margin-bottom: 1rem; }
 
-/* line 213, /stdin */
+/* line 217, /stdin */
 .imagen-ficha-modal {
   max-width: 60vw;
   max-height: 60vh;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
 
-/* line 224, /stdin */
+/* line 228, /stdin */
 .oculto {
   display: none; }
 
-/* line 229, /stdin */
+/* line 233, /stdin */
 .modal-aviso {
   position: fixed;
   top: 20%;
@@ -226,30 +229,30 @@ button {
   font-family: 'Campechana', sans-serif;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.4s ease-out; }
-  /* line 242, /stdin */
+  /* line 246, /stdin */
   .modal-aviso.warning {
     border: 3px solid #f7c948;
     background-color: #fff3d1;
     color: #7c5e10; }
-    /* line 246, /stdin */
+    /* line 250, /stdin */
     .modal-aviso.warning .modal-icono {
       color: #f7c948;
       font-size: 2rem; }
-  /* line 248, /stdin */
+  /* line 252, /stdin */
   .modal-aviso.oculto {
     display: none; }
 
-/* line 253, /stdin */
+/* line 257, /stdin */
 .modal-contenido {
   padding: 1.5rem;
   text-align: center; }
 
-/* line 258, /stdin */
+/* line 262, /stdin */
 .modal-mensaje {
   margin: 1rem;
   font-size: 1.1rem; }
 
-/* line 263, /stdin */
+/* line 267, /stdin */
 .modal-victoria {
   position: fixed;
   top: 0;
@@ -264,15 +267,15 @@ button {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out; }
-  /* line 277, /stdin */
+  /* line 281, /stdin */
   .modal-victoria.oculto {
     display: none; }
-  /* line 280, /stdin */
+  /* line 284, /stdin */
   .modal-victoria.activo {
     opacity: 1;
     transform: scale(1); }
 
-/* line 286, /stdin */
+/* line 290, /stdin */
 .contenido-victoria h1 {
   font-size: 6rem;
   color: #ffd700;
