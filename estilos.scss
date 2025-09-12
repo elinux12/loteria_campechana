@@ -83,7 +83,6 @@ body{
   box-sizing: border-box;
   border: 1px solid #ccc; /* Puedes quitarlo luego, útil para debug visual */
 }
-
 .controles {
   //background-color: #f9f9f9;
   background-color: $color-institucional;
@@ -104,7 +103,7 @@ body{
 .cola {
   //background-color: #f0f0f0;
   background-color: #f6e7d7;
-  
+  justify-content: flex-start;
   box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
   padding: 1rem;
   border-radius: 12px;
@@ -167,13 +166,24 @@ button {
   transform-origin: center;
 }
 
+#colaFichas{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0.5rem;
+  padding-bottom: 100px;
+}
+
 .ficha-cola {
-  width: 60px;
-  height: 60px;
+  width: 60px !important;
+  height: 60px !important;
   border-radius: 50%;
   background-color: #fcb3cd;
   border: 2px solid #e949a1;
   display: flex;
+  flex: 0 0 auto; //evita que se estiren o encojan
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;

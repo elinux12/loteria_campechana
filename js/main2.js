@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     fichaElemento.textContent = fichaActual.id;
     fichaElemento.classList.add('ficha-cola');
     cola.appendChild(fichaElemento);
+    //scroll automatico
+    cola.scrollTop = cola.scrollHeight;
     } else {
       console.log(`⚠️ Ficha ${fichaActual.id} ya está en la COLA. No se duplica.`);
     }
