@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A new web page">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.ico">
+    <title>Landing Page</title>
+    <style>
+        /* Minimal CSS Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, sans-serif; background: #fafbfc; color: #222; min-height: 100vh; line-height: 1.6; }
+    </style>
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+    <div id="landing">
+      <!--Inicio de carrusel --->
+      <div class="carrusel">
+        <img src="./img_carrusel/img4.jpg" class="slide activo">
+        <img src="./img_carrusel/img2.jpg" class="slide">
+        <img src="./img_carrusel/img3.jpg" class="slide">
+        <img src="./img_carrusel/img1.jpg" class="slide">
+        <!-- más imágenes -->
+        <div class="overlay"></div>
+      </div>
+      <!-- Fin de carrusel -->
+      <audio id="musicaFondo" autoplay loop>
+        <source src="./El_Pregonero_De_Campeche.mp3" type="audio/mpeg">
+      </audio>
+
+      <button id="iniciarBtn" class="animar">INICIAR LOTERÍA</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    <script  src="./js/carrusel.js"></script>
+</body>
+</html>

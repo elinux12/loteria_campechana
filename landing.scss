@@ -1,0 +1,108 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+#landing {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+
+.carrusel {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
+}
+
+.slide.activo {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+#iniciarBtn {
+  //outline: 2px solid lime;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+  visibility: visible;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  
+  animation: aparecer 1.2s ease-out forwards;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#iniciarBtn:hover,
+#iniciarBtn:active{
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 0 15px rgba(255,165,0,0.6);
+}
+
+
+.animar {
+  animation: aparecer 1.2s ease-out 1.5 forwards;
+}
+
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+//Media quries pantallas 600px
+
+@media (max-width: 600px) {
+  .slide {
+    object-fit: contain; // evita cortes agresivos en pantallas estrechas
+  }
+
+  #iniciarBtn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    bottom: 1rem; // más arriba para evitar conflictos con teclado o barra
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.6); // más opaco para reforzar el efecto de recuerdo
+  }
+
+  #landing {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
