@@ -307,7 +307,7 @@ button {
 
 //Media queri max-width:1024px orientation: portrait
 
-@media screen and (max-width: 1024px) and (orientation: portrait) {
+@media screen and (max-width: 1024px) and (orientation: landscape) {
   h1 {
     font-size: 1.6rem;
     line-height: 1.2;
