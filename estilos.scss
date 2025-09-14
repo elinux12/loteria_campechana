@@ -305,3 +305,14 @@ button {
   animation: vibrar 1.5s infinite, brillar 1s infinite;
 }
 
+//Media queri max-width:1024px orientation: portrait
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-inline: auto;
+    max-width: 90vw;
+    word-break: break-word;
+  }
+}

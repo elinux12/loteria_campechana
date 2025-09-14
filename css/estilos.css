@@ -293,3 +293,12 @@ button {
   color: #ffd700;
   text-shadow: 0 0 10px #ff7f00, 0 0 20px #002b5b;
   animation: vibrar 1.5s infinite, brillar 1s infinite; }
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  /* line 311, /stdin */
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-inline: auto;
+    max-width: 90vw;
+    word-break: break-word; } }
