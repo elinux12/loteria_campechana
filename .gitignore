@@ -1,6 +1,47 @@
 #ignora los siguientes archivos.
 estilos.scss
-/img2/
-/js/main.js
-/json/fichas2.json
 
+# 🔧 Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# 🧹 Archivos temporales y de respaldo
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# 🧠 Archivos de VSCode
+.vscode/
+.history/
+.code-workspace
+
+# 🧪 Archivos de entorno local
+.env
+.env.local
+.env.*.local
+
+# 📦 Node.js y dependencias (si aplica)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🧬 Archivos de compilación y dist
+dist/
+build/
+out/
+coverage/
+
+# 🔀 Archivos de sistema Git
+*.lock
+*.pid
+
+# 🧿 Archivos de configuración de editor
+*.sublime-workspace
+*.sublime-project

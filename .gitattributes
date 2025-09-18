@@ -1,0 +1,8 @@
+# 🧼 Normalización de finales de línea
+*.php text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.scss text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.sh text eol=lf

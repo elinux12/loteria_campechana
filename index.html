@@ -18,6 +18,8 @@
       <input type="number" id="inputNumeroFicha" placeholder="Número de ficha"/>
       <button id="btnCantarFicha">🎤 Cantar ficha</button>
       <button id="btnVerificarVictoria">Victoria</button>
+      <button id="btn-loteria-patron" class="btn-loteria-patron">Patrones</button>
+
     </div>
   
 <!-- COLUMNA DE RENDERIZADO DE LA LOTERIA -->
@@ -64,10 +66,44 @@
 
 <!-- FIN DIV MODAL VICTORIA -->
 
+<!-- INICIO MODAL PATRON COMO GANAR-->
 
+<!-- Overlay -->
+<div id="overlay-patrones" class="modal-patron oculto">
+  <div class="contenido-patron">
+    <h3 class="titulo-patrones">¿Cómo se gana?</h3>
+    <div class="carrusel">
+      <img src="./img_carrusel/carrusel_patrones/patron1.png" alt="Patrón 1">
+      <img src="./img_carrusel/carrusel_patrones/patron2.png" alt="Patrón 1">
+      <img src="./img_carrusel/carrusel_patrones/patron3.png" alt="Patrón 1">
+    </div>
+    <button class="cerrar-overlay">Cerrar</button>
+  </div>
+</div>
+
+<!-- FIN MODAL PATRON COMO GANAR-->
+  <script src="./js/carrusel_patrones.js"></script>
   <script type="module" src="./js/main2.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
   <script type="module" src="./js/mostrarModalError.js"></script>
   <script>eruda.init();</script>
+  <script>
+  console.log("JS inline cargado");
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const boton = document.getElementById('btn-loteria-patron');
+    const overlay = document.getElementById('overlay-patrones');
+    const cerrar = document.querySelector('.cerrar-overlay');
+
+    boton.addEventListener('click', () => {
+      console.log("Botón presionado");
+      overlay.classList.remove('oculto');
+    });
+
+    cerrar.addEventListener('click', () => {
+      overlay.classList.add('oculto');
+    });
+  });
+</script>
 </body>
 </html>
