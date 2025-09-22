@@ -9,7 +9,7 @@ setInterval(() => {
 
 document.getElementById('iniciarBtn').addEventListener('click', () => {
   document.getElementById('musicaFondo').pause();
-  window.location.href = 'index.html';
+  window.location.href = './index.html';
 });
 
 // Modulo que reproduce musica de fondo 

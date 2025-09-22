@@ -27,7 +27,7 @@
   { "id": 26, "nombre": "Soldado", "imagen": "soldado.webp"},
   { "id": 27, "nombre": "Sol", "imagen": "sol.webp"},
   { "id": 28, "nombre": "Mulas", "imagen": "Mulas.webp"},
-  { "id": 29, "nombre": "Fuertes", "imagen": "fuertes.webp"},
+  { "id": 29, "nombre": "Fuertes", "imagen": "Fuertes.webp"},
   { "id": 30, "nombre": "Almirez", "imagen": "Almirez.webp"},
   { "id": 31, "nombre": "Quinqué", "imagen": "quinque.webp"},
   { "id": 32, "nombre": "Nopales", "imagen": "nopales.webp"},
